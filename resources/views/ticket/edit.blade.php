@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'Loket')
 
 @section('content_header')
-    <h1>Create Location</h1>
+    <h1>Update Tiket</h1>
     <a class="label label-warning" href="{{URL::to('ticket')}}" >Back</a>
 @stop
 

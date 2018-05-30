@@ -34,8 +34,7 @@
             .flex-center {
                 align-items: center;
                 display: flex;
-                justify-content: space-evenly;
-
+                justify-content: center;
             }
 
             .links > a {
@@ -54,7 +53,7 @@
         </style>
     </head>
     <body>
-    <div style="width: 100vw; height: 100vh;background-image: url('https://source.unsplash.com/WLUHO9A_xik/1600x900');">
+    <div style="width: 100vw; height: 100vh; background-color:rgb(232, 107, 50);">
         <div class="d-flex flex-column flex-center" style="height: 100vh;">
             <div class="p-2">
                 <h1>Welcome to Loket!</h1>

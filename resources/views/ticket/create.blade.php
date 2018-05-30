@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'Loket')
 
 @section('content_header')
     <h1>Create Tiket</h1>
@@ -15,6 +15,12 @@
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
+        </div>
+    @endif
+
+    @if ($message = Session::get('error'))
+        <div class="alert alert-danger">
+            <p>{{ $message }}</p>
         </div>
     @endif
 
@@ -46,7 +52,7 @@
         <div class="form-group">
             <input type="hidden" value="{{csrf_token()}}" name="_token" />
             <label for="title">Price :</label>
-            <input type="number" class="form-control" name="price"/>
+            <input type="number" class="form-control" name="price" value="0"/>
         </div>
         <div class="form-group">
             <input type="hidden" value="{{csrf_token()}}" name="_token" />

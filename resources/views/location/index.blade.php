@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'Loket')
 
 @section('content_header')
     <h1>Lokasi</h1>

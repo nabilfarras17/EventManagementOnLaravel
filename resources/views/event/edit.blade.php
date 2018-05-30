@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'Loket')
 
 @section('content_header')
     <h1>Edit Event</h1>
@@ -52,14 +52,15 @@
         <div class="form-group">
             <input type="hidden" value="{{csrf_token()}}" name="_token" />
             <label for="title">Tiket Event (Hold down the Ctrl (windows) / Command (Mac) button to select multiple options) :</label>
-            <select class="form-control" multiple="multiple" name="ticket[]" multiple size="{{ $locations->count() }}" required>
-            @foreach($event->tickets as $selectedTicket)
-                {{--<p>{{$selectedTicket->name}}}</p>--}}
-                @foreach($tickets as $key => $ticket)
-                    <option value="{{$ticket->id}}" @if($selectedTicket->id == $ticket->id)selected="selected"@endif >
-                        {{$ticket->name}}
-                    </option>
+            <select class="form-control" multiple="multiple" name="ticket[]" multiple size="{{$locations->count()}}" required>
+            @foreach($tickets as $ticket)
+                <option value="{{$ticket->id}}"
+                @foreach($event->tickets as $value)
+                    @if($value->id == $ticket->id)selected="selected"@endif
                 @endforeach
+                >
+                    {{$ticket->name}}
+                </option>
             @endforeach
             </select>
         </div>

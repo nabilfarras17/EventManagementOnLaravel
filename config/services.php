@@ -39,4 +39,5 @@ return [
         'client_secret' => '3lTR7yS0zG2p0l9bgD6LjpxBFPstZ8OOPIk6ri2Ea7PfvfSiHv',
         'redirect' => 'http://127.0.0.1:8000/callback',
     ],
+    'pathDetailEvent' => 'http://127.0.0.1:8000/event/detail/'
 ];

@@ -91,9 +91,9 @@ return [
 
     'logout_method' => null,
 
-    'login_url' => 'login',
+    'login_url' => 'null',
 
-    'register_url' => 'register',
+    'register_url' => 'null',
 
     /*
     |--------------------------------------------------------------------------
@@ -124,72 +124,6 @@ return [
             'url'         => 'location',
             'icon'        => 'location-arrow'
         ],
-//        'ACCOUNT SETTINGS',
-//        [
-//            'text' => 'Profile',
-//            'url'  => 'admin/settings',
-//            'icon' => 'user',
-//        ],
-//        [
-//            'text' => 'Change Password',
-//            'url'  => 'admin/settings',
-//            'icon' => 'lock',
-//        ],
-//        [
-//            'text'    => 'Lokasi',
-//            'icon'    => 'share',
-//            'submenu' => [
-//                [
-//                    'text' => 'Show',
-//                    'url'  => 'location/show',
-//                ],
-//                [
-//                    'text' => 'Create',
-//                    'url'  => '#',
-//                ],
-////                [
-////                    'text'    => 'Level One',
-////                    'url'     => '#',
-////                    'submenu' => [
-////                        [
-////                            'text' => 'Level Two',
-////                            'url'  => '#',
-////                        ],
-////                        [
-////                            'text'    => 'Level Two',
-////                            'url'     => '#',
-////                            'submenu' => [
-////                                [
-////                                    'text' => 'Level Three',
-////                                    'url'  => '#',
-////                                ],
-////                                [
-////                                    'text' => 'Level Three',
-////                                    'url'  => '#',
-////                                ],
-////                            ],
-////                        ],
-////                    ],
-////                ],
-//                [
-//                    'text' => 'Update',
-//                    'url'  => '#',
-//                ],
-//            ],
-//        ],
-//        'LABELS',
-//        [
-//            'text'       => 'Important',
-//            'icon_color' => 'red',
-//        ],
-//        [
-//            'text'       => 'Warning',
-//            'icon_color' => 'yellow',
-//        ],
-//        [
-//            'text'       => 'Information',
-//            'icon_color' => 'aqua',
-//        ],
     ],
 
     /*

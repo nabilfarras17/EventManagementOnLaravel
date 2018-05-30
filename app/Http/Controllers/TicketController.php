@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Ticket;
 use Illuminate\Http\Request;
-
+use Validator;
 class TicketController extends Controller
 {
     public function __construct()
@@ -32,10 +32,10 @@ class TicketController extends Controller
         ]);
 
         if($request->type === "Free" && $request->price > 0){
-            return redirect("ticket");
+            return redirect("ticket/create")->with('error', 'Price must set to 0');
         }
-        elseif($request->type === "Berbayar" && $request->price < 0){
-            return redirect("ticket");
+        elseif($request->type === "Berbayar" && $request->price <= 0){
+            return redirect("ticket/create")->with('error', 'Price must greater than 0');
         }
 
         Ticket::create([
@@ -64,10 +64,10 @@ class TicketController extends Controller
         ]);
 
         if($request->type === "Free" && $request->price > 0){
-            return redirect("ticket");
+            return back()->withInput()->withErrors('Price must set to 0');
         }
-        elseif($request->type === "Berbayar" && $request->price < 0){
-            return redirect("ticket");
+        elseif($request->type === "Berbayar" && $request->price <= 0){
+            return back()->withInput()->withErrors('Price must greater than 0');
         }
 
         $ticket->name = $data['name'];
