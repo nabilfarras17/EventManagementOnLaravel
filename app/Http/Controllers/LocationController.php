@@ -8,10 +8,15 @@ use App\Location;
 
 class LocationController extends Controller
 {
-//    public function __construct()
-//    {
-//        $this->middleware('auth');
-//    }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function index() {
+        $locations = Location::where('created_id', Auth::user()->id)->get();
+        return view('location.index', compact('locations'));
+    }
 
     public function create() {
       return view("location.create");
@@ -26,7 +31,7 @@ class LocationController extends Controller
         Location::create([
             'name' => $data['name'],
             'address' => $data['address'],
-            'created_id' => 6
+            'created_id' => Auth::user()->id
         ]);
 
         return redirect('location')->with('success','Location created successfully.');
@@ -39,6 +44,7 @@ class LocationController extends Controller
     public function update(Request $request, Location $location) {
         $location->name = $request->get('name');
         $location->address = $request->get('address');
+        $location->created_id = Auth::user()->id;
         $location->save();
         return redirect('location')->with('success','Location updated successfully.');
     }
@@ -46,11 +52,5 @@ class LocationController extends Controller
     public function destroy(Location $location) {
         $location->delete();
         return redirect('location')->with('success','Location deleted successfully.');
-    }
-
-
-    public function index() {
-        $locations = Location::all();
-        return view('location.index', compact('locations'));
     }
 }

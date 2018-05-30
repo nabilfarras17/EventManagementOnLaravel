@@ -1,19 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 
 use App\Ticket;
 use Illuminate\Http\Request;
 
 class TicketController extends Controller
 {
-//    public function __construct()
-//    {
-//        $this->middleware('auth');
-//    }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index() {
-        $tickets = Ticket::all();
+        $tickets = Ticket::where('created_by',Auth::User()->id)->get();
         return view('ticket.index', compact('tickets'));
     }
 
@@ -43,7 +44,7 @@ class TicketController extends Controller
             'amount' => $data['amount'],
             'price' => $data['price'],
             'description' => $data['description'],
-            'created_by' => 1
+            'created_by' => Auth::user()->id
         ]);
 
         return redirect('ticket')->with('success','Ticket created successfully.');
@@ -74,7 +75,7 @@ class TicketController extends Controller
         $ticket->amount = $data['amount'];
         $ticket->price = $data['price'];
         $ticket->description = $data['description'];
-        $ticket->created_by = 1;
+        $ticket->created_by = Auth::user()->id;
         $ticket->save();
         return redirect('ticket')->with('success','Ticket updated successfully.');
     }

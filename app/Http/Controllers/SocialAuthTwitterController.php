@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class SocialAuthTwitterController extends Controller
 {
-    //
     public function redirect() {
         return Socialite::driver('twitter')->redirect();
     }
