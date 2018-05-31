@@ -63,7 +63,7 @@
 
         <div class="form-group">
             <input type="hidden" value="{{csrf_token()}}" name="_token" />
-            <label for="title">Description :</label>
+            <label for="title">Deskripsi :</label>
             <textarea type="text" class="form-control" name="description" ></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Create</button>
