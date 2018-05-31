@@ -2,9 +2,10 @@ Event Management Installation :
 
 Source Code can runs On Linux, Mac And Windows systems.
 
-First Clone my git repository : 
+First Clone my git repository and Composer Install: 
 ```
    git clone https://github.com/nabilfarras17/EventManagementOnLaravel.git
+   composer install 
 ```
 
 Setting client_id and client_secret twitter :
